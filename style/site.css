@@ -1,5 +1,4 @@
-.btn-outline-success {
-}
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap')
 
 .btn-outline-primary {
     border-color: #00b0ff; /*set the color you want here*/
@@ -10,4 +9,13 @@
     color: #fff;
     background-color: #00b0ff;
     border-color: #00b0ff; /*set the color you want here*/
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Oswald', sans-serif;
 }
