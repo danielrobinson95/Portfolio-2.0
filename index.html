@@ -11,36 +11,42 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style/site.css">
     <link rel="icon" href="images/portfolio_logo_icon.ico" type="image/icon type">
-    <title>Daniel Robinson | Full Stack Developer & Architect</title>    
+    <title>Daniel Robinson | Full Stack Developer & Architect</title>
 </head>
 
 <body>
-    <!-- Just an image -->
-    <nav class="navbar navbar-light bg-clear">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/portfolio_logo.png" alt="">
-            </a>
-            <form class="form-inline">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Let's Talk</button>
-            </form>
-        </div>
-    </nav>
+    <div id="intro-container">
+        <!-- Just an image -->
+        <nav class="navbar navbar-light bg-clear">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/portfolio_logo.png" alt="">
+                </a>
+                <form class="form-inline">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Let's Talk</button>
+                </form>
+            </div>
+        </nav>
 
-    <div class="container pt-5">
-        <div class="row pt-5">
-            <div class="col-sm-12 text-center">
-                <h1>Full Stack Developer & Architect</h1>
-                <p class="pt-3">I have a strong passion for design, whether it be front-end or back-end, my goal is to deliver something that is both functional and beautiful.</p>
+        <div class="container pt-5">
+            <div class="row pt-5">
+                <div class="col-sm-12 text-center">
+                    <h1><span id="intro-verb"></span><span id="intro"></span></h1>
+                    <p class="pt-3">I have a strong passion for design, whether it be front-end or back-end, my goal is
+                        to
+                        deliver something that is both functional and beautiful.</p>
+                </div>
             </div>
-        </div>
-        <div class="row pt-5">
-            <div class="col-sm-12">
-                <img src="images/memoji-colored.png" class="rounded-circle mx-auto d-block" height="200" width="200" alt="...">
+            <div class="row pt-5">
+                <div class="col-sm-12">
+                    <img src="images/memoji-colored.png" class="rounded-circle mx-auto d-block" height="200" width="200"
+                        alt="...">
+                </div>
             </div>
-        </div>
+            <img src="images/computers.png" class="d-block img-fluid mx-auto" id="computers"/>
+        </div>        
     </div>
-
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -53,6 +59,53 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
+
 </body>
 
 </html>
+
+<script>
+    (function () {
+        var isFirstIteration = true;
+        const verbs = ['Passionated', 'Determined', 'Hard-Working', 'Dedicated'];
+        introVerbInstance = new TypeIt('#intro-verb', {
+            strings: ['Passionate', 'Determined', 'Hard-Working', 'Dedicated'],
+            cursor: true,
+            loop: true,
+            nextStringDelay: [3000, 50],
+            breakLines: false,
+            loopDelay: 3000,
+            afterString: (step, queue, instance) => {
+                if (!isFirstIteration) return;
+                isFirstIteration = false;
+                instance.freeze();
+                new TypeIt("#intro", {
+                    strings: ['Full Stack Developer & Architect'],
+                    cursor: false,
+                    afterComplete: (introInstance) => {
+                        instance.unfreeze();
+                    }
+                }).go();
+            }
+        }).go();
+
+        // const introVerbInstance = new TypeIt('#intro-verb', {
+        //     strings: ['Passionate'],
+        //     cursor: false,
+        //     afterComplete: (instance) => {
+        //         const introInstance = new TypeIt("#intro", {
+        //             strings: ['Full Stack Developer & Architect'],
+        //             cursor: false,
+        //             afterComplete: (instance) => {
+        //                 introVerbInstance = new TypeIt('#intro-verb', {
+        //                     strings: ['Determined'],
+        //                     cursor: true
+        //                 }).go();
+        //             }
+        //         }).go();
+        //     }
+        // }).go();
+
+    })();
+</script>

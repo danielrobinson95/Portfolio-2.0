@@ -1,14 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap'); 
 
 .btn-outline-primary {
-    border-color: #00b0ff; /*set the color you want here*/
+    border-color: #00b0ff;
+    /*set the color you want here*/
     color: #00b0ff;
 
 }
-.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, .open>.dropdown-toggle.btn-outline-primary {
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.open>.dropdown-toggle.btn-outline-primary {
     color: #fff;
     background-color: #00b0ff;
-    border-color: #00b0ff; /*set the color you want here*/
+    border-color: #00b0ff;
+    /*set the color you want here*/
 }
 
 h1 {
@@ -19,3 +26,30 @@ h1 {
 p {
     font-family: 'Oswald', sans-serif;
 }
+
+html,
+body {
+    height: 100%;
+}
+
+#intro-container {
+    overflow-y: auto;
+    min-height: 933px;
+    position: relative;
+}
+
+#computers {
+    bottom: 0; position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+
+
+  @media screen and (max-width: 880px) {
+    #intro-verb::after {
+        content: "\A";
+        white-space: pre;
+      }
+  }
