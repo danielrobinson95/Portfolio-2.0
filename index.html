@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -16,22 +15,18 @@
 
 <body>
     <div id="intro-container">
-        <!-- Just an image -->
         <nav class="navbar navbar-light bg-clear">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="">
                     <img src="images/portfolio_logo.png" alt="">
-                </a>
-                <form class="form-inline">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Let's Talk</button>
-                </form>
+                </a>              
             </div>
         </nav>
 
         <div class="container pt-5">
             <div class="row pt-5">
                 <div class="col-sm-12 text-center">
-                    <h1><span id="intro-verb"></span><span id="intro"></span></h1>
+                    <h1><span id="intro-verb"></span><span id="intro">Full Stack Developer & Architect</span></h1>
                     <p class="pt-3">I have a strong passion for design, whether it be front-end or back-end, my goal is
                         to
                         deliver something that is both functional and beautiful.</p>
@@ -43,13 +38,51 @@
                         alt="...">
                 </div>
             </div>
-            <img src="images/computers.png" class="d-block img-fluid mx-auto" id="computers"/>
-        </div>        
+            <div class="col-sm-12 text-center mt-5">
+                <button class="btn btn-lg btn-outline-primary mt-5" data-toggle="modal"
+                data-target=".contact-modal">Let's Talk</button>
+            </div>
+        </div>
     </div>
-    
+    <p id="my-form-status"></p>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Message Me</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="contact-form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="form-name">Name</label>
+                            <input type="text" class="form-control" id="form-name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Email address</label>
+                            <input type="email" class="form-control" id="form-email" name="_replyto">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea class="form-control" id="form-message" rows="6" name="message"></textarea></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="form-submit-btn" class="btn btn-primary">Send</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
@@ -67,45 +100,62 @@
 
 <script>
     (function () {
-        var isFirstIteration = true;
-        const verbs = ['Passionated', 'Determined', 'Hard-Working', 'Dedicated'];
-        introVerbInstance = new TypeIt('#intro-verb', {
+        const introVerbInstance = new TypeIt('#intro-verb', {
             strings: ['Passionate', 'Determined', 'Hard-Working', 'Dedicated'],
             cursor: true,
             loop: true,
             nextStringDelay: [3000, 50],
             breakLines: false,
-            loopDelay: 3000,
-            afterString: (step, queue, instance) => {
-                if (!isFirstIteration) return;
-                isFirstIteration = false;
-                instance.freeze();
-                new TypeIt("#intro", {
-                    strings: ['Full Stack Developer & Architect'],
-                    cursor: false,
-                    afterComplete: (introInstance) => {
-                        instance.unfreeze();
-                    }
-                }).go();
-            }
+            loopDelay: 3000
         }).go();
-
-        // const introVerbInstance = new TypeIt('#intro-verb', {
-        //     strings: ['Passionate'],
-        //     cursor: false,
-        //     afterComplete: (instance) => {
-        //         const introInstance = new TypeIt("#intro", {
-        //             strings: ['Full Stack Developer & Architect'],
-        //             cursor: false,
-        //             afterComplete: (instance) => {
-        //                 introVerbInstance = new TypeIt('#intro-verb', {
-        //                     strings: ['Determined'],
-        //                     cursor: true
-        //                 }).go();
-        //             }
-        //         }).go();
-        //     }
-        // }).go();
-
     })();
+
+    window.addEventListener("DOMContentLoaded", function () {
+
+        // get the form elements defined in your form HTML above
+
+        var form = document.getElementById("contact-form");
+        var button = document.getElementById("form-submit-btn");
+        var status = document.getElementById("my-form-status");
+
+        // Success and Error functions for after the form is submitted
+
+        function success() {
+            form.reset();
+            button.style = "display: none ";
+            status.innerHTML = "Thanks!";
+        }
+
+        function error() {
+            status.innerHTML = "Oops! There was a problem.";
+        }
+
+        // handle the form submission event
+
+        form.addEventListener("submit", function (ev) {
+            ev.preventDefault();
+            var data = new FormData(form);
+            console.log(data);
+            ajax(data, success, error);
+        });
+    });
+
+    // helper function for sending an AJAX request
+
+    function ajax(data, success, error) {
+        const method = "POST";
+        const url = "https://formspree.io/xjvvlqkk";
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.status === 200) {
+                success(xhr.response, xhr.responseType);
+            } else {
+                error(xhr.status, xhr.response, xhr.responseType);
+            }
+        };
+        xhr.send(data);
+    }
 </script>

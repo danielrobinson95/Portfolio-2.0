@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap'); 
 
+
+
+.btn-primary {
+    border-color: #00b0ff;
+    background-color: #00b0ff;
+
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #00b0ff;
+    border-color: #00b0ff;
+    /*set the color you want here*/
+}
+
 .btn-outline-primary {
     border-color: #00b0ff;
     /*set the color you want here*/
@@ -34,7 +53,9 @@ body {
 
 #intro-container {
     overflow-y: auto;
-    min-height: 933px;
+    max-height: 933px;
+    min-height: 850px;
+    height: 100%;
     position: relative;
 }
 
