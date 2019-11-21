@@ -14,10 +14,12 @@ steps:
   inputs:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
-- task: AzureCLI@2
+- task: AzureFileCopy@3
   inputs:
+    SourcePath: '$(build.sourcesDirectory)'
     azureSubscription: 'Pay-As-You-Go(5bef145b-6b3c-4859-8322-66617be28aa8)'
-    scriptType: 'pscore'
-    scriptLocation: 'inlineScript'
-  
+    Destination: 'AzureBlob'
+    storage: 'danielportfoliosite'
+    ContainerName: '$web'
+
 - task: PublishBuildArtifacts@1
