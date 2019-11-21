@@ -16,7 +16,7 @@ steps:
     includeRootFolder: false
 - task: AzureFileCopy@3
   inputs:
-    SourcePath: '$(build.sourcesDirectory)'
+    SourcePath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     azureSubscription: 'Pay-As-You-Go(5bef145b-6b3c-4859-8322-66617be28aa8)'
     Destination: 'AzureBlob'
     storage: 'danielportfoliosite'
