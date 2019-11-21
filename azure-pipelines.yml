@@ -12,13 +12,7 @@ pool:
 steps:
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '- task: AzureFileCopy@3
-  inputs:
-    SourcePath: '$(build.sourcesDirectory)'
-    azureSubscription: 'Pay-As-You-Go(5bef145b-6b3c-4859-8322-66617be28aa8)'
-    Destination: 'AzureBlob'
-    storage: 'danielportfoliosite'
-    ContainerName: '$web''
+    rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
 - task: AzureFileCopy@3
   inputs:
