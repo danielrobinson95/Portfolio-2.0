@@ -28,8 +28,7 @@ steps:
   inputs:
     SourcePath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)'
     azureSubscription: 'Pay-As-You-Go(5bef145b-6b3c-4859-8322-66617be28aa8)'
-    Destination: 'AzureBlob'
-    AdditionalArgumentsForBlobCopy: '--recursive=true'
+    Destination: 'AzureBlob'    
     storage: 'danielportfoliosite'
     ContainerName: '$web'
 - task: PublishBuildArtifacts@1
