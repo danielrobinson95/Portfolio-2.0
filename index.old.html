@@ -13,77 +13,78 @@
     <title>Daniel Robinson | Full Stack Developer & Architect</title>
 </head>
 
-<body>
-    <div class="wrapper">
-        <nav class="navbar sticky-top navbar-light bg-light">
-            <a class="navbar-brand ml-5 mt-3" href="">
-                <img src="images/portfolio_logo.png" alt="">
-            </a>
+<body>       
+    <div id="intro-container">
+        <nav class="navbar navbar-light bg-clear">
+            <div class="container">
+                <a class="navbar-brand" href="">
+                    <img src="images/portfolio_logo.png" alt="">
+                </a>
+            </div>
         </nav>
 
-        <div class="jumbotron vertical-center bg-light">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-7">
-                        <span id="intro-verb"></span>
-                        <span id="intro">Full Stack Developer & Architect</span>
-                        <p class="pt-3">I have a strong passion for design, whether it be front-end or back-end, my goal
-                            is
-                            to
-                            deliver something that is both functional and beautiful.</p>
-                        <button class="btn btn-lg btn-outline-primary mt-2" data-toggle="modal"
-                            data-target=".contact-modal">Let's Talk</button>
-                    </div>
-                    <div class="col-sm-5">
-                        <img class="img-fluid" src="images\programming.png" alt="Man Programming" />
-                    </div>
+        <div class="container pt-3">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1><span id="intro-verb"></span><span id="intro">Full Stack Developer & Architect</span></h1>
+                    <p class="pt-3">I have a strong passion for design, whether it be front-end or back-end, my goal is
+                        to
+                        deliver something that is both functional and beautiful.</p>
                 </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-sm-12">
+                    <img src="images/memoji-colored.png" class="rounded-circle mx-auto d-block" height="200" width="200"
+                        alt="...">
+                </div>
+            </div>
+            <div class="col-sm-12 text-center mt-5">
+                <button class="btn btn-lg btn-outline-primary mt-5" data-toggle="modal"
+                    data-target=".contact-modal">Let's Talk</button>
             </div>
         </div>
     </div>
+    <p id="my-form-status"></p>
 
-    <div class="wrapper bg-blue">
-          
-    </div>
-   
     <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-full">
+        <div class="modal-dialog modal-lg modal-full">            
             <div class="modal-content">
-                <div class="container">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Message Me</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    <div class="container">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Message Me</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="container">
-                    <form id="contact-form">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="form-name">Name</label>
-                                <input type="text" class="form-control" id="form-name" name="name">
+                    <div class="container">
+                        <form id="contact-form">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="form-name">Name</label>
+                                    <input type="text" class="form-control" id="form-name" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-email">Email address</label>
+                                    <input type="email" class="form-control" id="form-email" name="_replyto">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-message">Message</label>
+                                    <textarea class="form-control" id="form-message" rows="6"
+                                        name="message"></textarea></textarea>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="form-email">Email address</label>
-                                <input type="email" class="form-control" id="form-email" name="_replyto">
+                            <div class="modal-footer">
+                                <button type="submit" id="form-submit-btn" class="btn btn-primary btn-lg">Send</button>
                             </div>
-                            <div class="form-group">
-                                <label for="form-message">Message</label>
-                                <textarea class="form-control" id="form-message" rows="6"
-                                    name="message"></textarea></textarea>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" id="form-submit-btn" class="btn btn-primary btn-lg">Send</button>
-                        </div>
-                    </form>
-                </div>
+                        </form>
+                    </div>
             </div>
         </div>
     </div>
 
+    
 
 
 

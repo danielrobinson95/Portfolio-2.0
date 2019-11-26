@@ -42,21 +42,16 @@ h1 {
     font-weight: bold;
 }
 
-p {
-    font-family: 'Oswald', sans-serif;
-}
+
 
 html,
 body {
     height: 100%;
 }
 
-#intro-container {
-    overflow-y: auto;
-    max-height: 933px;
-    min-height: 850px;
-    height: 100%;
-    position: relative;
+.wrapper {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
 }
 
 #computers {
@@ -83,3 +78,30 @@ body {
 .modal-full .modal-content {
     min-height: 100vh;
 }
+
+#intro {
+    font-size: 50px;
+}
+
+#intro-verb {
+    font-size: 30px;
+    font-weight: 10;
+    color: #00b0ff;
+    display: block;
+}
+
+.bg-blue {
+    background-color: #00b0ff;
+}
+
+.bg-light {
+    background-color: #fff !important;
+}
+
+
+@media screen and (min-width: 1680px) {
+   .jumbotron {
+       margin-left: 100px;
+       margin-right: 100px;
+   }
+  }
