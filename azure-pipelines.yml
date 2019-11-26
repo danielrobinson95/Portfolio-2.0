@@ -1,0 +1,34 @@
+# HTML
+# Archive your static HTML project and save it with the build record.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(build.sourcesDirectory)'
+    includeRootFolder: false
+- task: ExtractFiles@1
+  inputs:
+    archiveFilePatterns: '*.zip'
+    destinationFolder: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)'
+    cleanDestinationFolder: true
+- task: CmdLine@2
+  inputs:
+    script: |
+      cd '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)'      
+      dir    
+- task: AzureFileCopy@3
+  inputs:
+    SourcePath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)'
+    azureSubscription: 'Pay-As-You-Go(5bef145b-6b3c-4859-8322-66617be28aa8)'
+    Destination: 'AzureBlob'    
+    storage: 'danielportfoliosite'
+    ContainerName: '$web'
+- task: PublishBuildArtifacts@1
