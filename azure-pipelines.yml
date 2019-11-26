@@ -22,4 +22,10 @@ steps:
     Destination: 'AzureBlob'    
     storage: 'danielportfoliosite'
     ContainerName: '$web'
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(5bef145b-6b3c-4859-8322-66617be28aa8)'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az cdn endpoint purge -g "Portfolio_DanielRobinson" -n "danielrportfolio " --profile-name "danielrobinsonportfolio-cdn" --content-paths "*"'
 - task: PublishBuildArtifacts@1
