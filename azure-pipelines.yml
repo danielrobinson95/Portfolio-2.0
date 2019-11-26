@@ -10,23 +10,14 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)'
-    includeRootFolder: false
-- task: ExtractFiles@1
-  inputs:
-    archiveFilePatterns: '*.zip'
-    destinationFolder: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)'
-    cleanDestinationFolder: true
 - task: CmdLine@2
   inputs:
     script: |
-      cd '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)'      
+      cd '$(build.sourcesDirectory)'      
       dir    
 - task: AzureFileCopy@3
   inputs:
-    SourcePath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)/index.html'
+    SourcePath: '$(build.sourcesDirectory)'
     azureSubscription: 'Pay-As-You-Go(5bef145b-6b3c-4859-8322-66617be28aa8)'
     Destination: 'AzureBlob'    
     storage: 'danielportfoliosite'
