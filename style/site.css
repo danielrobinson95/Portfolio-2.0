@@ -51,7 +51,7 @@ body {
 
 .wrapper {
     min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh; /* These two lines are counted as one :-)       */
+    min-height: 100vh;    
 }
 
 #computers {
@@ -105,3 +105,39 @@ body {
        margin-right: 100px;
    }
   }
+
+  .hidden {
+      display: none;
+  }
+
+
+  @media screen and (max-width: 1680px) {
+    #intro {
+        font-size: 30px;
+    }
+
+    #intro-verb {
+        font-size: 20px;
+    }
+
+    #intro-description {
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (min-height: 1200px) and (min-width: 800px) {
+    .wrapper {
+        min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
+        min-height: 50vh;    
+    }
+    
+}
+
+@media screen and (min-height: 1024px) and (min-width: 600px) {
+    .wrapper {
+        min-height: 60%;  /* Fallback for browsers do NOT support vh unit */
+        min-height: 60vh;    
+    }
+    
+}

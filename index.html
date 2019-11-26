@@ -9,43 +9,47 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style/site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" integrity="sha256-a2tobsqlbgLsWs7ZVUGgP5IvWZsx8bTNQpzsqCSm5mk=" crossorigin="anonymous" />
     <link rel="icon" href="images/portfolio_logo_icon.ico" type="image/icon type">
     <title>Daniel Robinson | Full Stack Developer & Architect</title>
 </head>
 
 <body>
-    <div class="wrapper">
+    <div>
         <nav class="navbar sticky-top navbar-light bg-light">
-            <a class="navbar-brand ml-5 mt-3" href="">
+            <a class="navbar-brand mt-3" href="">
                 <img src="images/portfolio_logo.png" alt="">
             </a>
+            <button class="btn btn-lg btn-outline-primary mt-2 hidden faster" data-toggle="modal" id="contact-button-nav"
+            data-target=".contact-modal">Let's Talk</button>
         </nav>
-
-        <div class="jumbotron vertical-center bg-light">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-7">
-                        <span id="intro-verb"></span>
-                        <span id="intro">Full Stack Developer & Architect</span>
-                        <p class="pt-3">I have a strong passion for design, whether it be front-end or back-end, my goal
-                            is
-                            to
-                            deliver something that is both functional and beautiful.</p>
-                        <button class="btn btn-lg btn-outline-primary mt-2" data-toggle="modal"
-                            data-target=".contact-modal">Let's Talk</button>
-                    </div>
-                    <div class="col-sm-5">
-                        <img class="img-fluid" src="images\programming.png" alt="Man Programming" />
+        <div class="wrapper">
+            <div class="jumbotron vertical-center bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <span id="intro-verb"></span>
+                            <span id="intro" class="fluid-text">Full Stack Developer & Architect</span>
+                            <p class="pt-3" id="intro-description">I have a strong passion for design, whether it be front-end or back-end, my
+                                goal
+                                is to deliver something that is both functional and beautiful.</p>
+                            <button class="btn btn-lg btn-outline-primary mt-2" data-toggle="modal" id="contact-button-intro"
+                                data-target=".contact-modal">Let's Talk</button>
+                        </div>
+                        <div class="col-sm-5">
+                            <img class="img-fluid" src="images\programming.png" alt="Man Programming" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="wrapper bg-blue">
+
+        </div>
     </div>
 
-    <div class="wrapper bg-blue">
-          
-    </div>
-   
+
     <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-full">
@@ -98,7 +102,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
-
 </body>
 
 </html>
@@ -114,6 +117,46 @@
             loopDelay: 3000
         }).go();
     })();
+    jQuery.expr.filters.offscreen = function (el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            (rect.x + rect.width) < 0 ||
+            (rect.y + rect.height) < 0 ||
+            (rect.x > window.innerWidth || rect.y > window.innerHeight)
+        );
+    };
+    var isHidden = true;
+
+    $(window).scroll(function() {
+        var isOffScreen = $('#contact-button-intro').is(':offscreen');
+
+        if (isOffScreen && isHidden) {
+            isHidden = false;
+            $('#contact-button-nav').toggleClass('hidden');
+            animateCSS('#contact-button-nav', 'slideInUp');
+
+        } else if (!isOffScreen && !isHidden) {
+            isHidden = true;
+            $('#contact-button-nav').toggleClass('hidden');
+
+
+        }
+    });
+
+    function animateCSS(element, animationName, callback) {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+}
+
 
     window.addEventListener("DOMContentLoaded", function () {
 
