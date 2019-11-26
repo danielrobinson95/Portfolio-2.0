@@ -19,6 +19,12 @@ steps:
     archiveFilePatterns: '*.zip'
     destinationFolder: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)'
     cleanDestinationFolder: true
+- task: CmdLine@2
+  inputs:
+    script: |
+      cd '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)'      
+      dir
+    
 - task: AzureFileCopy@3
   inputs:
     SourcePath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)/*.*'
