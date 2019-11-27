@@ -46,3 +46,25 @@
 .modal-full .modal-content {
     min-height: 100vh;
 }
+
+#computer-image {
+    padding-top: 7rem;
+}
+
+@media (max-width: 800px) {
+    #computer-image {
+        padding-top: 0;
+    }
+
+    .display-4 {
+        font-size: 2.625rem;
+    }
+
+    .display-3 {
+        font-size: 3.375rem;
+    }
+
+    .lead {
+        font-size: .9375rem;
+    }
+  }
