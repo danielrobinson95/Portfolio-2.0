@@ -69,7 +69,7 @@
     }
 
     #skills {
-        height: 1600px !important;
+        height: 1300px !important;
     }
 
     .blue-bg {
@@ -94,7 +94,7 @@
   }
 
   #skills {
-      height: 1200px;
+      height: 1000px;
   }
 
   .blue-bg {
@@ -148,4 +148,18 @@
 
 .card-group {
     height: 100%;
+}
+
+
+#header {
+}
+
+.big {
+    font-size: 6rem;
+    color: #00b0ff;
+    cursor: pointer;
+}
+
+.big:hover {
+    font-size: 7rem;
 }
