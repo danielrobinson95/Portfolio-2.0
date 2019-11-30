@@ -72,6 +72,13 @@
         height: 1300px !important;
     }
 
+    
+  .card-group {
+    height: 400px;
+    padding-top: 30px !important;
+    width: 100%;
+}
+
     .blue-bg {
         height: 30% !important;
     }
