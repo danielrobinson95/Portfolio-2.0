@@ -67,4 +67,65 @@
     .lead {
         font-size: .9375rem;
     }
+
+    #skills {
+        height: 1600px !important;
+    }
+
+    .blue-bg {
+        height: 30% !important;
+    }
+    
+  .top-20 {
+    top: 10% !important;
+  
+}
+
+.card-group {
+    width: 85% !important;
+    margin: 0 auto;
+}
+  
   }
+
+  #skills {
+      height: 1200px;
+  }
+
+  .blue-bg {
+      background-color: #00b0ff;
+      height: 50%;
+  }
+
+  .top-20 {
+      top: 20%;
+      position: relative;
+    
+  }
+
+  .card-group {
+      height: 400px;
+      padding-top: 100px;
+      width: 100%;
+  }
+
+  .icon-img {
+      font-size: 40px;
+      padding-top: 40px;
+      color: #00b0ff;
+  }
+
+  .card-skill {
+      font-weight: bold;
+      color: #00b0ff;      
+  }
+
+
+  
+@media (max-width: 400px) {
+
+    .card-group {
+        padding-top: 30px;
+    }
+    
+}

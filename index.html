@@ -16,12 +16,15 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-light bg-white container">
-        <a class="navbar-brand" href="#">
-            <img src="images/portfolio_logo.png" alt="Daniel Robinson | Full Stack Developer & Architect">
-        </a>
-        <button type="button" class="btn btn-outline-primary default-hidden faster" data-toggle="modal" data-target=".contact-modal" id="contact-button-nav">Let's
-            Talk</button>
+    <nav class="navbar sticky-top navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/portfolio_logo.png" alt="Daniel Robinson | Full Stack Developer & Architect">
+            </a>
+            <button type="button" class="btn btn-outline-primary default-hidden faster" data-toggle="modal"
+                data-target=".contact-modal" id="contact-button-nav">Let's
+                Talk</button>
+        </div>
     </nav>
     <section id="introduction">
         <div class="container">
@@ -31,8 +34,8 @@
                     <h1 class="display-3">Full Stack Developer & Architect</h1>
                     <p class="lead">I have a strong passion for design, whether it be front-end or back-end, my goal is
                         to deliver something that is both functional and beautiful.</p>
-                    <button type="button" class="btn btn-outline-primary mt-3" data-toggle="modal" id="contact-button-intro"
-                        data-target=".contact-modal">Let's Talk</button>
+                    <button type="button" class="btn btn-outline-primary mt-3" data-toggle="modal"
+                        id="contact-button-intro" data-target=".contact-modal">Let's Talk</button>
                 </div>
             </div>
             <div class="jumbotron-fluid bg-white">
@@ -40,6 +43,53 @@
                     <img src="images/computers.png" class="img-fluid" id="computer-image">
 
                 </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="blue-bg">
+            <div class="container top-20 text-center">
+                <h1 class="text-white">Hey, I'm Daniel!</h1>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-12 col-md-6">
+                        <p class="text-white mt-3">I am a creative and business-savvy developer with experience across a
+                            broad
+                            range of technologies. I have a proven ability to meet strict deadlines while combining
+                            vision,
+                            ingenuity, and business acumen with well-developed skills in Azure Cloud Services, Transact
+                            SQL, Xamarin, ASP.NET, Angular, and VueJS. </p>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row">
+                    <div class="card-group">
+                        <div class="card col-s6">
+                            <i class="fas fa-code icon-img"></i>
+                            <div class="card-body">
+                                <h5 class="card-title mb-5">Frontend Developer</h5>
+                                <h5 class="card-skill">Languages</h5>
+                                <p>Html, Javascript, Css, Typescript, Angular, <br>VueJS, ChartJS, jQuery, Ajax</p>
+
+                                <h5 class="card-skill pt-3">Tools</h5>
+                                <p>Visual Studio Code, Figma, Github, Bootstrap, <br>Material Design, Git</p>
+
+                            </div>
+                        </div>
+                        <div class="card col-s6">
+                            <i class="fas fa-server icon-img"></i>
+                            <div class="card-body">
+                                    <h5 class="card-title mb-5">Backend Developer</h5>
+                                    <h5 class="card-skill">Languages</h5>
+                                    <p>C#, .NET Classic, .NET Core, SQL, Python, <br>Swift, Xamarin, IIS, LDAP</p>
+    
+                                    <h5 class="card-skill pt-3">Tools</h5>
+                                    <p>Visual Studio, SSMS, Tableau, <br>Process Automation, Azure, XCode</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -95,6 +145,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
     <script src="scripts/site.js"></script>
+    <script src="https://kit.fontawesome.com/965483f6ba.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
