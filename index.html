@@ -16,123 +16,143 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-light bg-white">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/portfolio_logo.png" alt="Daniel Robinson | Full Stack Developer & Architect">
-            </a>
-            <button type="button" class="btn btn-outline-primary default-hidden faster" data-toggle="modal"
-                data-target=".contact-modal" id="contact-button-nav">Let's
-                Talk</button>
-        </div>
-    </nav>
-    <section id="introduction">
-        <div class="container">
-            <div class="row">
-                <div class="jumbotron bg-white text-center">
-                    <h1 class="display-4" id="intro-verb"></h1>
-                    <h1 class="display-3">Full Stack Developer & Architect</h1>
-                    <p class="lead">I have a strong passion for design, whether it be front-end or back-end, my goal is
-                        to deliver something that is both functional and beautiful.</p>
-                    <button type="button" class="btn btn-outline-primary mt-3" data-toggle="modal"
-                        id="contact-button-intro" data-target=".contact-modal">Let's Talk</button>
+        <div class="toast mr-2 mt-3 sticky-top" style="position: fixed; top: 0; right: 0; z-index: 2000; float: right;" data-delay="3000">
+                <div class="toast-header">
+                  <strong class="mr-auto" id="notification-title"></strong>
+                  <small>just now</small>
+                  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-            </div>
-            <div class="jumbotron-fluid bg-white">
-                <div class="container text-center">
-                    <img src="images/computers.png" class="img-fluid" id="computer-image">
+                <div class="toast-body" id="notification-message">
+                </div>
+              </div>
+    <div>
 
-                </div>
+        <nav class="navbar sticky-top navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/portfolio_logo.png" alt="Daniel Robinson | Full Stack Developer & Architect">
+                </a>
+                <button type="button" class="btn btn-outline-primary default-hidden faster" data-toggle="modal"
+                    data-target=".contact-modal" id="contact-button-nav">Let's
+                    Talk</button>
             </div>
-        </div>
-    </section>
-    <section id="skills">
-        <div class="blue-bg">
-            <div class="container top-20 text-center">
-                <h1 class="text-white">Hey, I'm Daniel!</h1>
+        </nav>
+        <section id="introduction">
+            <div class="container">
+
                 <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-12 col-md-6">
-                        <p class="text-white mt-3">I am a creative and business-savvy developer with experience across a
-                            broad
-                            range of technologies. I have a proven ability to meet strict deadlines while combining
-                            vision,
-                            ingenuity, and business acumen with well-developed skills in Azure Cloud Services, Transact
-                            SQL, Xamarin, ASP.NET, Angular, and VueJS. </p>
+                    <div class="jumbotron bg-white text-center">
+                        <h1 class="display-4" id="intro-verb"></h1>
+                        <h1 class="display-3">Full Stack Developer & Architect</h1>
+                        <p class="lead">I have a strong passion for design, whether it be front-end or back-end, my goal
+                            is
+                            to deliver something that is both functional and beautiful.</p>
+                        <button type="button" class="btn btn-outline-primary mt-3" data-toggle="modal"
+                            id="contact-button-intro" data-target=".contact-modal">Let's Talk</button>
                     </div>
-                    <div class="col-3"></div>
                 </div>
-                <div class="row">
-                    <div class="card-group">
-                        <div class="card col-s6">
-                            <i class="fas fa-code icon-img"></i>
-                            <div class="card-body">
-                                <h5 class="card-title mb-5">Frontend Developer</h5>
-                                <h5 class="card-skill">Languages</h5>
-                                <p>Html, Javascript, Css, Typescript, Angular, <br>VueJS, ChartJS, jQuery, Ajax</p>
+                <div class="jumbotron-fluid bg-white">
+                    <div class="container text-center">
+                        <img src="images/computers.png" class="img-fluid" id="computer-image">
 
-                                <h5 class="card-skill pt-3">Tools</h5>
-                                <p>Visual Studio Code, Figma, Github, Bootstrap, <br>Material Design, Git</p>
-
-                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <div class="blue-bg">
+                <div class="container top-20 text-center">
+                    <h1 class="text-white">Hey, I'm Daniel!</h1>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-12 col-md-6">
+                            <p class="text-white mt-3">I am a creative and business-savvy developer with experience
+                                across a
+                                broad
+                                range of technologies. I have a proven ability to meet strict deadlines while combining
+                                vision,
+                                ingenuity, and business acumen with well-developed skills in Azure Cloud Services,
+                                Transact
+                                SQL, Xamarin, ASP.NET, Angular, and VueJS. </p>
                         </div>
-                        <div class="card col-s6">
-                            <i class="fas fa-server icon-img"></i>
-                            <div class="card-body">
+                        <div class="col-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="card-group">
+                            <div class="card col-s6">
+                                <i class="fas fa-code icon-img"></i>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-5">Frontend Developer</h5>
+                                    <h5 class="card-skill">Languages</h5>
+                                    <p>Html, Javascript, Css, Typescript, Angular, <br>VueJS, ChartJS, jQuery, Ajax</p>
+
+                                    <h5 class="card-skill pt-3">Tools</h5>
+                                    <p>Visual Studio Code, Figma, Github, Bootstrap, <br>Material Design, Git</p>
+
+                                </div>
+                            </div>
+                            <div class="card col-s6">
+                                <i class="fas fa-server icon-img"></i>
+                                <div class="card-body">
                                     <h5 class="card-title mb-5">Backend Developer</h5>
                                     <h5 class="card-skill">Languages</h5>
                                     <p>C#, .NET Classic, .NET Core, SQL, Python, <br>Swift, Xamarin, IIS, LDAP</p>
-    
+
                                     <h5 class="card-skill pt-3">Tools</h5>
                                     <p>Visual Studio, SSMS, Tableau, <br>Process Automation, Azure, XCode</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact-popup">
-        <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-full">
-                <div class="modal-content">
-                    <div class="container">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Message Me</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+        <section id="contact-popup">
+            <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-full">
+                    <div class="modal-content">
+                        <div class="container">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Message Me</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <form id="contact-form">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="form-name">Name</label>
+                                        <input type="text" class="form-control" id="form-name" name="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="form-email">Email address</label>
+                                        <input type="email" class="form-control" id="form-email" name="_replyto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="form-message">Message</label>
+                                        <textarea class="form-control" id="form-message" rows="6"
+                                            name="message"></textarea></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" id="form-submit-btn"
+                                        class="btn btn-primary btn-lg">Send</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="container">
-                        <form id="contact-form">
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label for="form-name">Name</label>
-                                    <input type="text" class="form-control" id="form-name" name="name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="form-email">Email address</label>
-                                    <input type="email" class="form-control" id="form-email" name="_replyto">
-                                </div>
-                                <div class="form-group">
-                                    <label for="form-message">Message</label>
-                                    <textarea class="form-control" id="form-message" rows="6"
-                                        name="message"></textarea></textarea>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" id="form-submit-btn" class="btn btn-primary btn-lg">Send</button>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
