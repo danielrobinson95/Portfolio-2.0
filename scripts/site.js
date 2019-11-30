@@ -91,3 +91,11 @@ function post(data, success, error) {
     };
     xhr.send(data);
 }
+
+$('.toast').on('show.bs.toast', function () {
+    $('.toast').show();
+  });
+
+  $('.toast').on('hidden.bs.toast', function () {
+    $('.toast').hide();
+  })

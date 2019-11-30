@@ -79,12 +79,17 @@
   .top-20 {
     top: 10% !important;
   
-}
+    }
 
-.card-group {
-    width: 85% !important;
-    margin: 0 auto;
-}
+    .card-group {
+        width: 85% !important;
+        margin: 0 auto;
+    }
+
+    
+    .toast {
+        width: 90% !important;
+    }
   
   }
 
@@ -127,9 +132,17 @@
     .card-group {
         padding-top: 30px;
     }
+
     
 }
 
 .toast {
     width: 400px;
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    z-index: 2000; 
+    float: right; 
+    display:none;
 }
+
